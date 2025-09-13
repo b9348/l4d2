@@ -1,10 +1,16 @@
 import { defineConfig } from 'rspress/config';
+import path from 'path';
 
 export default defineConfig({
 
   root: 'docs',
   title: 'L4D2 Wiki',
   description: 'Left 4 Dead 2 综合信息资源网站',
+
+  // 全局UI组件
+  globalUIComponents: [
+    path.join(__dirname, 'docs/components/GiscusComments.tsx'),
+  ],
 
 
 
@@ -93,34 +99,7 @@ export default defineConfig({
             };
           `,
         },
-        {
-          tag: 'script',
-          attrs: {
-            src: '/giscus.js',
-          },
-        },
-        {
-          tag: 'script',
-          children: `
-            // 初始化 Giscus 评论系统 - 延迟执行避免水合冲突
-            function initGiscus() {
-              if (window.giscusManager) {
-                window.giscusManager.init();
-              } else {
-                setTimeout(initGiscus, 100);
-              }
-            }
 
-            // 等待页面完全加载后再初始化
-            if (document.readyState === 'complete') {
-              setTimeout(initGiscus, 1000);
-            } else {
-              window.addEventListener('load', () => {
-                setTimeout(initGiscus, 1000);
-              });
-            }
-          `,
-        },
 
       ],
     },

@@ -7,9 +7,8 @@
   padding-top: 2rem;
   padding-bottom: 1rem;
   border-top: 1px solid var(--rp-c-divider, #e5e7eb);
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* 深色模式下的分割线 */
@@ -41,10 +40,12 @@
 /* Giscus iframe 样式 */
 .giscus iframe {
   width: 100%;
+  max-width: 100%;
   border: none;
   border-radius: 8px;
   background: transparent;
   min-height: 200px;
+  box-sizing: border-box;
 }
 
 /* 加载状态样式 */
@@ -72,23 +73,12 @@
 }
 
 /* 响应式设计 */
-@media (max-width: 1024px) {
-  .giscus-container {
-    max-width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
-  }
-}
-
 @media (max-width: 768px) {
   .giscus-container {
     margin-top: 2rem;
     margin-bottom: 1.5rem;
     padding-top: 1.5rem;
     padding-bottom: 1rem;
-    max-width: calc(100% - 2rem);
-    margin-left: 1rem;
-    margin-right: 1rem;
   }
 
   .giscus-container h2 {
@@ -104,9 +94,6 @@
 /* 确保评论区域在小屏幕上的可读性 */
 @media (max-width: 480px) {
   .giscus-container {
-    max-width: calc(100% - 2rem);
-    margin-left: 1rem;
-    margin-right: 1rem;
     margin-bottom: 1rem;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
@@ -145,4 +132,27 @@
 /* 确保评论区域不会影响页面布局 */
 .giscus-container {
   contain: layout style;
+  overflow: hidden;
+}
+
+/* 确保评论区域跟随文档内容宽度 */
+.giscus-container {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* 在文档页面中限制宽度 */
+.rspress-doc .giscus-container {
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.giscus,
+.giscus iframe {
+  max-width: 100% !important;
+  overflow-x: hidden;
 }
