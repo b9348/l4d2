@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content="Rspress v1.45.5">
     <title data-rh="true">Map Strategies - L4D2 Wiki</title><meta data-rh="true" name="description" content="Left 4 Dead 2 综合信息资源网站"/>
-  <script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script><script defer src="/static/js/styles.998fbf28.js"></script><script defer src="/static/js/lib-react.6870e38a.js"></script><script defer src="/static/js/lib-router.98f44042.js"></script><script defer src="/static/js/15.b23a2d92.js"></script><script defer src="/static/js/index.7edf9ab8.js"></script><link href="/static/css/styles.b6f8176c.css" rel="stylesheet"><meta name="keywords" content="Left 4 Dead 2, L4D2, 游戏攻略, 地图攻略, MOD, 服务器"><link rel="stylesheet" href="/giscus-custom.css"><script>
+  <script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script><script defer src="/static/js/styles.998fbf28.js"></script><script defer src="/static/js/lib-react.6870e38a.js"></script><script defer src="/static/js/lib-router.98f44042.js"></script><script defer src="/static/js/15.e1d2e50b.js"></script><script defer src="/static/js/index.2d6ead70.js"></script><link href="/static/css/styles.b6f8176c.css" rel="stylesheet"><meta name="keywords" content="Left 4 Dead 2, L4D2, 游戏攻略, 地图攻略, MOD, 服务器"><link rel="stylesheet" href="/giscus-custom.css"><script>
             // 抑制 React Router future flag 警告
             const originalWarn = console.warn;
             console.warn = function(...args) {
@@ -16,15 +16,21 @@
               originalWarn.apply(console, args);
             };
           </script><script src="/giscus.js"></script><script>
-            // 初始化 Giscus 评论系统
-            if (window.giscusManager) {
-              window.giscusManager.init();
+            // 初始化 Giscus 评论系统 - 延迟执行避免水合冲突
+            function initGiscus() {
+              if (window.giscusManager) {
+                window.giscusManager.init();
+              } else {
+                setTimeout(initGiscus, 100);
+              }
+            }
+
+            // 等待页面完全加载后再初始化
+            if (document.readyState === 'complete') {
+              setTimeout(initGiscus, 1000);
             } else {
-              // 如果脚本还没加载完成，等待一下
-              document.addEventListener('DOMContentLoaded', () => {
-                if (window.giscusManager) {
-                  window.giscusManager.init();
-                }
+              window.addEventListener('load', () => {
+                setTimeout(initGiscus, 1000);
               });
             }
           </script></head>
@@ -57,7 +63,7 @@
 <li class="[&amp;:not(:first-child)]:mt-2">Look for hidden supply points and safe routes</li>
 <li class="[&amp;:not(:first-child)]:mt-2">Teamwork is especially important in complex maps</li>
 </ul>
-<p class="my-4 leading-7">Choose a map and start your adventure!</p><!--/$--></div><div class="rspress-doc-footer"><footer class="mt-8"><div class="xs:flex pb-5 px-2 justify-end items-center"><div class="flex text-sm text-text-2 leading-6 sm:leading-8 font-medium"><p>Last Updated<!-- -->: <span>9/13/2025, 11:47:30 AM</span></p></div></div><div class="flex flex-col"><a href="https://github.com/b9348/l4d2/tree/main/docs/en/maps/index.md" target="_blank" class="editLink_e1cfa">在 GitHub 上编辑此页</a></div><div class="flex flex-col sm:flex-row sm:justify-around gap-4 pt-6"><div class="prev_c92d1 flex flex-col"></div><div class="next_c11be flex flex-col"></div></div></footer></div></div><div class="aside-container_bc5fa"><div class="flex flex-col"><div id="aside-container" class="relative text-sm font-medium"><div class="leading-7 block text-sm font-semibold pl-3">ON THIS PAGE</div><nav class="mt-1"><ul class="relative"><li><a href="#️-official-maps" title="🗺️ Official Maps" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">🗺️ Official Maps</span></a></li><li><a href="#main-campaigns" title="Main Campaigns" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">Main Campaigns</span></a></li><li><a href="#-dlc-maps" title="🎮 DLC Maps" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">🎮 DLC Maps</span></a></li><li><a href="#-strategy-tips" title="💡 Strategy Tips" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">💡 Strategy Tips</span></a></li></ul></nav></div></div></div></div></div></div></section></div>
+<p class="my-4 leading-7">Choose a map and start your adventure!</p><!--/$--></div><div class="rspress-doc-footer"><footer class="mt-8"><div class="xs:flex pb-5 px-2 justify-end items-center"><div class="flex text-sm text-text-2 leading-6 sm:leading-8 font-medium"><p>Last Updated<!-- -->: <span>9/13/2025, 11:59:18 AM</span></p></div></div><div class="flex flex-col"><a href="https://github.com/b9348/l4d2/tree/main/docs/en/maps/index.md" target="_blank" class="editLink_e1cfa">在 GitHub 上编辑此页</a></div><div class="flex flex-col sm:flex-row sm:justify-around gap-4 pt-6"><div class="prev_c92d1 flex flex-col"></div><div class="next_c11be flex flex-col"></div></div></footer></div></div><div class="aside-container_bc5fa"><div class="flex flex-col"><div id="aside-container" class="relative text-sm font-medium"><div class="leading-7 block text-sm font-semibold pl-3">ON THIS PAGE</div><nav class="mt-1"><ul class="relative"><li><a href="#️-official-maps" title="🗺️ Official Maps" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">🗺️ Official Maps</span></a></li><li><a href="#main-campaigns" title="Main Campaigns" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">Main Campaigns</span></a></li><li><a href="#-dlc-maps" title="🎮 DLC Maps" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">🎮 DLC Maps</span></a></li><li><a href="#-strategy-tips" title="💡 Strategy Tips" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">💡 Strategy Tips</span></a></li></ul></nav></div></div></div></div></div></div></section></div>
     <div id="search-container"></div>
   </body>
 </html>

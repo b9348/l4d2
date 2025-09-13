@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content="Rspress v1.45.5">
     <title data-rh="true">404 - L4D2 Wiki</title><meta data-rh="true" name="description" content="Left 4 Dead 2 综合信息资源网站"/>
-  <script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script><script defer src="/static/js/styles.998fbf28.js"></script><script defer src="/static/js/lib-react.6870e38a.js"></script><script defer src="/static/js/lib-router.98f44042.js"></script><script defer src="/static/js/15.b23a2d92.js"></script><script defer src="/static/js/index.7edf9ab8.js"></script><link href="/static/css/styles.b6f8176c.css" rel="stylesheet"><meta name="keywords" content="Left 4 Dead 2, L4D2, 游戏攻略, 地图攻略, MOD, 服务器"><link rel="stylesheet" href="/giscus-custom.css"><script>
+  <script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script><script defer src="/static/js/styles.998fbf28.js"></script><script defer src="/static/js/lib-react.6870e38a.js"></script><script defer src="/static/js/lib-router.98f44042.js"></script><script defer src="/static/js/15.e1d2e50b.js"></script><script defer src="/static/js/index.2d6ead70.js"></script><link href="/static/css/styles.b6f8176c.css" rel="stylesheet"><meta name="keywords" content="Left 4 Dead 2, L4D2, 游戏攻略, 地图攻略, MOD, 服务器"><link rel="stylesheet" href="/giscus-custom.css"><script>
             // 抑制 React Router future flag 警告
             const originalWarn = console.warn;
             console.warn = function(...args) {
@@ -16,15 +16,21 @@
               originalWarn.apply(console, args);
             };
           </script><script src="/giscus.js"></script><script>
-            // 初始化 Giscus 评论系统
-            if (window.giscusManager) {
-              window.giscusManager.init();
+            // 初始化 Giscus 评论系统 - 延迟执行避免水合冲突
+            function initGiscus() {
+              if (window.giscusManager) {
+                window.giscusManager.init();
+              } else {
+                setTimeout(initGiscus, 100);
+              }
+            }
+
+            // 等待页面完全加载后再初始化
+            if (document.readyState === 'complete') {
+              setTimeout(initGiscus, 1000);
             } else {
-              // 如果脚本还没加载完成，等待一下
-              document.addEventListener('DOMContentLoaded', () => {
-                if (window.giscusManager) {
-                  window.giscusManager.init();
-                }
+              window.addEventListener('load', () => {
+                setTimeout(initGiscus, 1000);
               });
             }
           </script></head>

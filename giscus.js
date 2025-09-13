@@ -181,44 +181,71 @@ class GiscusManager {
   }
 
   /**
+   * 等待React水合完成
+   */
+  waitForHydration(callback) {
+    // 检查是否在React环境中
+    if (typeof window !== 'undefined' && window.React) {
+      // 等待React水合完成
+      const checkHydration = () => {
+        const rootElement = document.querySelector('#root');
+        if (rootElement && rootElement._reactInternalFiber || rootElement && rootElement._reactInternalInstance) {
+          callback();
+        } else {
+          setTimeout(checkHydration, 100);
+        }
+      };
+      checkHydration();
+    } else {
+      // 非React环境或React未加载，直接执行
+      callback();
+    }
+  }
+
+  /**
    * 初始化giscus管理器
    */
   init() {
-    // 页面加载完成后初始化
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', () => this.load());
-    } else {
-      this.load();
-    }
-
-    // 监听路由变化
-    const handleRouteChange = () => {
-      setTimeout(() => this.load(), 200);
-    };
-
-    // 监听各种路由变化事件
-    window.addEventListener('popstate', handleRouteChange);
-    
-    // 劫持pushState和replaceState
-    const originalPushState = history.pushState;
-    const originalReplaceState = history.replaceState;
-    
-    history.pushState = function() {
-      originalPushState.apply(history, arguments);
-      handleRouteChange();
-    };
-    
-    history.replaceState = function() {
-      originalReplaceState.apply(history, arguments);
-      handleRouteChange();
-    };
-
-    // 监听链接点击
-    document.addEventListener('click', (e) => {
-      const link = e.target.closest('a');
-      if (link && link.href && link.href.startsWith(window.location.origin)) {
-        setTimeout(handleRouteChange, 100);
+    // 等待React水合完成后再初始化
+    this.waitForHydration(() => {
+      // 页面加载完成后初始化
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+          setTimeout(() => this.load(), 500); // 增加延迟确保React完全就绪
+        });
+      } else {
+        setTimeout(() => this.load(), 500);
       }
+
+      // 监听路由变化
+      const handleRouteChange = () => {
+        setTimeout(() => this.load(), 300); // 增加延迟
+      };
+
+      // 监听各种路由变化事件
+      window.addEventListener('popstate', handleRouteChange);
+
+      // 劫持pushState和replaceState
+      const originalPushState = history.pushState;
+      const originalReplaceState = history.replaceState;
+
+      history.pushState = function() {
+        originalPushState.apply(history, arguments);
+        handleRouteChange();
+      };
+
+      history.replaceState = function() {
+        originalReplaceState.apply(history, arguments);
+        handleRouteChange();
+      };
+
+      // 监听链接点击
+      document.addEventListener('click', (e) => {
+        const link = e.target.closest('a');
+        if (link && link.href && link.href.startsWith(window.location.origin)) {
+          setTimeout(handleRouteChange, 200);
+        }
+      });
     });
   }
 }
