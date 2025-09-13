@@ -1,22 +1,22 @@
 [
   {
-    "text": "模组推荐",
-    "link": "/zh/mods/",
-    "activeMatch": "^/zh/mods/"
+    "text": "地图攻略",
+    "link": "/maps/",
+    "activeMatch": "/maps"
   },
   {
-    "text": "地图",
-    "link": "/zh/maps/",
-    "activeMatch": "^/zh/maps/"
+    "text": "MOD 推荐",
+    "link": "/mods/dxvk",
+    "activeMatch": "/mods"
   },
   {
-    "text": "找服玩",
-    "link": "/zh/servers/",
-    "activeMatch": "^/zh/servers/"
+    "text": "服务器",
+    "link": "/servers/submit-server",
+    "activeMatch": "/servers"
   },
   {
     "text": "开服相关",
-    "link": "/zh/admin/",
-    "activeMatch": "^/zh/admin/"
+    "link": "/admin/",
+    "activeMatch": "/admin"
   }
 ]
