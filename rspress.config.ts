@@ -74,6 +74,13 @@ export default defineConfig({
           },
         },
         {
+          tag: 'link',
+          attrs: {
+            rel: 'stylesheet',
+            href: '/giscus-custom.css',
+          },
+        },
+        {
           tag: 'script',
           children: `
             // 抑制 React Router future flag 警告
@@ -88,48 +95,24 @@ export default defineConfig({
         },
         {
           tag: 'script',
+          attrs: {
+            src: '/giscus.js',
+          },
+        },
+        {
+          tag: 'script',
           children: `
-            // 自动加载 Giscus 评论
-            function loadGiscus() {
-              if (document.querySelector('.giscus')) return;
-
-              const script = document.createElement('script');
-              script.src = 'https://giscus.app/client.js';
-              script.setAttribute('data-repo', 'b9348/l4d2');
-              script.setAttribute('data-repo-id', 'R_kgDOPvHHoQ');
-              script.setAttribute('data-category', 'Announcements');
-              script.setAttribute('data-category-id', 'DIC_kwDOPvHHoc4CvZUj');
-              script.setAttribute('data-mapping', 'pathname');
-              script.setAttribute('data-strict', '0');
-              script.setAttribute('data-reactions-enabled', '1');
-              script.setAttribute('data-emit-metadata', '0');
-              script.setAttribute('data-input-position', 'bottom');
-              script.setAttribute('data-theme', 'preferred_color_scheme');
-              script.setAttribute('data-lang', 'zh-CN');
-              script.setAttribute('crossorigin', 'anonymous');
-              script.async = true;
-
-              const container = document.createElement('div');
-              container.style.marginTop = '2rem';
-              container.appendChild(script);
-
-              const content = document.querySelector('.rspress-doc-content');
-              if (content) {
-                content.appendChild(container);
-              }
-            }
-
-            // 页面加载完成后加载评论
-            if (document.readyState === 'loading') {
-              document.addEventListener('DOMContentLoaded', loadGiscus);
+            // 初始化 Giscus 评论系统
+            if (window.giscusManager) {
+              window.giscusManager.init();
             } else {
-              loadGiscus();
+              // 如果脚本还没加载完成，等待一下
+              document.addEventListener('DOMContentLoaded', () => {
+                if (window.giscusManager) {
+                  window.giscusManager.init();
+                }
+              });
             }
-
-            // 路由变化时重新加载评论
-            window.addEventListener('popstate', () => {
-              setTimeout(loadGiscus, 100);
-            });
           `,
         },
 
