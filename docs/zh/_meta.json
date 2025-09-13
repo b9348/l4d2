@@ -1,0 +1,27 @@
+[
+  {
+    "text": "游戏指南",
+    "link": "/zh/guide/",
+    "activeMatch": "^/zh/guide/"
+  },
+  {
+    "text": "地图攻略", 
+    "link": "/zh/maps/",
+    "activeMatch": "^/zh/maps/"
+  },
+  {
+    "text": "武器装备",
+    "link": "/zh/weapons/",
+    "activeMatch": "^/zh/weapons/"
+  },
+  {
+    "text": "MOD 推荐",
+    "link": "/zh/mods/",
+    "activeMatch": "^/zh/mods/"
+  },
+  {
+    "text": "服务器",
+    "link": "/zh/servers/",
+    "activeMatch": "^/zh/servers/"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "text": "Guide",
+    "link": "/en/guide/",
+    "activeMatch": "^/en/guide/"
+  },
+  {
+    "text": "Maps", 
+    "link": "/en/maps/",
+    "activeMatch": "^/en/maps/"
+  },
+  {
+    "text": "Weapons",
+    "link": "/en/weapons/",
+    "activeMatch": "^/en/weapons/"
+  }
+]

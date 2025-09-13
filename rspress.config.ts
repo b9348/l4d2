@@ -6,7 +6,9 @@ export default defineConfig({
   title: 'L4D2 Wiki',
   description: 'Left 4 Dead 2 综合信息资源网站',
   icon: '/favicon.ico',
-  
+
+
+
   // 设置默认语言
   lang: 'zh',
 
@@ -42,99 +44,9 @@ export default defineConfig({
       {
         icon: 'github',
         mode: 'link',
-        content: 'https://github.com/your-username/l4d2-wiki',
+        content: 'https://github.com/b9348/l4d2',
       },
     ],
-
-    // 手动配置导航栏
-    nav: [
-      {
-        text: '游戏指南',
-        link: '/zh/guide/',
-        activeMatch: '/zh/guide/',
-      },
-      {
-        text: '地图攻略',
-        link: '/zh/maps/',
-        activeMatch: '/zh/maps/',
-      },
-      {
-        text: '武器装备',
-        link: '/zh/weapons/',
-        activeMatch: '/zh/weapons/',
-      },
-      {
-        text: 'MOD 推荐',
-        link: '/zh/mods/',
-        activeMatch: '/zh/mods/',
-      },
-      {
-        text: '服务器',
-        link: '/zh/servers/',
-        activeMatch: '/zh/servers/',
-      },
-    ],
-
-    // 手动配置侧边栏
-    sidebar: {
-      '/zh/guide/': [
-        {
-          text: '游戏指南',
-          items: [
-            { text: '游戏介绍', link: '/zh/guide/introduction' },
-            { text: '基础操作', link: '/zh/guide/basic-controls' },
-          ],
-        },
-      ],
-      '/zh/maps/': [
-        {
-          text: '地图攻略',
-          items: [
-            { text: 'Dead Center', link: '/zh/maps/dead-center' },
-          ],
-        },
-      ],
-      '/zh/weapons/': [
-        {
-          text: '武器装备',
-          items: [
-            { text: '手枪', link: '/zh/weapons/pistols' },
-          ],
-        },
-      ],
-      '/zh/mods/': [
-        {
-          text: 'MOD 推荐',
-          items: [],
-        },
-      ],
-      '/zh/servers/': [
-        {
-          text: '服务器',
-          items: [],
-        },
-      ],
-      '/en/guide/': [
-        {
-          text: 'Guide',
-          items: [
-            { text: 'Introduction', link: '/en/guide/introduction' },
-          ],
-        },
-      ],
-      '/en/maps/': [
-        {
-          text: 'Maps',
-          items: [],
-        },
-      ],
-      '/en/weapons/': [
-        {
-          text: 'Weapons',
-          items: [],
-        },
-      ],
-    },
 
     // 页脚配置
     footer: {
@@ -143,7 +55,7 @@ export default defineConfig({
 
     // 编辑链接
     editLink: {
-      docRepoBaseUrl: 'https://github.com/your-username/l4d2-wiki/tree/main/docs',
+      docRepoBaseUrl: 'https://github.com/b9348/l4d2/tree/main/docs',
       text: '在 GitHub 上编辑此页',
     },
 
@@ -175,6 +87,53 @@ export default defineConfig({
             };
           `,
         },
+        {
+          tag: 'script',
+          children: `
+            // 自动加载 Giscus 评论
+            function loadGiscus() {
+              if (document.querySelector('.giscus')) return;
+
+              const script = document.createElement('script');
+              script.src = 'https://giscus.app/client.js';
+              script.setAttribute('data-repo', 'b9348/l4d2');
+              script.setAttribute('data-repo-id', 'R_kgDOPvHHoQ');
+              script.setAttribute('data-category', 'Announcements');
+              script.setAttribute('data-category-id', 'DIC_kwDOPvHHoc4CvZUj');
+              script.setAttribute('data-mapping', 'pathname');
+              script.setAttribute('data-strict', '0');
+              script.setAttribute('data-reactions-enabled', '1');
+              script.setAttribute('data-emit-metadata', '0');
+              script.setAttribute('data-input-position', 'bottom');
+              script.setAttribute('data-theme', 'preferred_color_scheme');
+              script.setAttribute('data-lang', 'zh-CN');
+              script.setAttribute('crossorigin', 'anonymous');
+              script.async = true;
+
+              const container = document.createElement('div');
+              container.style.marginTop = '2rem';
+              container.appendChild(script);
+
+              const content = document.querySelector('.rspress-doc-content');
+              if (content) {
+                content.appendChild(container);
+              }
+            }
+
+            // 页面加载完成后加载评论
+            if (document.readyState === 'loading') {
+              document.addEventListener('DOMContentLoaded', loadGiscus);
+            } else {
+              loadGiscus();
+            }
+
+            // 路由变化时重新加载评论
+            window.addEventListener('popstate', () => {
+              setTimeout(loadGiscus, 100);
+            });
+          `,
+        },
+
       ],
     },
   },
