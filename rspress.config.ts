@@ -5,7 +5,6 @@ export default defineConfig({
   root: 'docs',
   title: 'L4D2 Wiki',
   description: 'Left 4 Dead 2 综合信息资源网站',
-  icon: '/favicon.ico',
 
 
 
