@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'rspress/runtime';
 
 interface GiscusCommentsProps {
@@ -31,9 +31,15 @@ const GiscusComments: React.FC<GiscusCommentsProps> = ({
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const location = useLocation();
+  const [isClient, setIsClient] = useState(false);
+
+  // 确保只在客户端渲染
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   useEffect(() => {
-    if (!ref.current) return;
+    if (!ref.current || !isClient) return;
 
     // 检查是否应该显示评论（排除首页）
     const shouldShowComments = location.pathname !== '/' && location.pathname.length > 1;
@@ -70,7 +76,12 @@ const GiscusComments: React.FC<GiscusCommentsProps> = ({
     script.async = true;
 
     ref.current.appendChild(script);
-  }, [location.pathname, repo, repoId, category, categoryId, mapping, strict, reactionsEnabled, emitMetadata, inputPosition, theme, loading]);
+  }, [isClient, location.pathname, repo, repoId, category, categoryId, mapping, strict, reactionsEnabled, emitMetadata, inputPosition, theme, loading]);
+
+  // 服务端渲染时不显示任何内容
+  if (!isClient) {
+    return null;
+  }
 
   // 不在文档页面时不渲染
   const shouldShowComments = location.pathname !== '/' && location.pathname.length > 1;
