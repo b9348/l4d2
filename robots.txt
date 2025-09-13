@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# 优化搜索引擎抓取
+Crawl-delay: 1
+
+# 重要页面
+Allow: /zh/
+Allow: /zh/mods/
+Allow: /zh/maps/
+Allow: /zh/servers/
+Allow: /zh/admin/
+Allow: /en/
+
+# 禁止抓取的目录
+Disallow: /.rspress/
+Disallow: /node_modules/
+Disallow: /_next/
+Disallow: /api/
+
+# Sitemap 位置
+Sitemap: https://b9348.github.io/l4d2/sitemap.xml
