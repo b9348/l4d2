@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content="Rspress v1.45.5">
     <title data-rh="true">404 - L4D2 Wiki</title><meta data-rh="true" name="description" content="Left 4 Dead 2 综合信息资源网站"/>
-  <script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script><script defer src="/static/js/styles.998fbf28.js"></script><script defer src="/static/js/lib-react.6870e38a.js"></script><script defer src="/static/js/lib-router.98f44042.js"></script><script defer src="/static/js/15.babaee79.js"></script><script defer src="/static/js/index.13d51a07.js"></script><link href="/static/css/styles.b6f8176c.css" rel="stylesheet"><meta name="keywords" content="Left 4 Dead 2, L4D2, 游戏攻略, 地图攻略, MOD, 服务器"><script>
+  <script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script><script defer src="/static/js/styles.998fbf28.js"></script><script defer src="/static/js/lib-react.6870e38a.js"></script><script defer src="/static/js/lib-router.98f44042.js"></script><script defer src="/static/js/15.b23a2d92.js"></script><script defer src="/static/js/index.7edf9ab8.js"></script><link href="/static/css/styles.b6f8176c.css" rel="stylesheet"><meta name="keywords" content="Left 4 Dead 2, L4D2, 游戏攻略, 地图攻略, MOD, 服务器"><link rel="stylesheet" href="/giscus-custom.css"><script>
             // 抑制 React Router future flag 警告
             const originalWarn = console.warn;
             console.warn = function(...args) {
@@ -15,48 +15,18 @@
               }
               originalWarn.apply(console, args);
             };
-          </script><script>
-            // 自动加载 Giscus 评论
-            function loadGiscus() {
-              if (document.querySelector('.giscus')) return;
-
-              const script = document.createElement('script');
-              script.src = 'https://giscus.app/client.js';
-              script.setAttribute('data-repo', 'b9348/l4d2');
-              script.setAttribute('data-repo-id', 'R_kgDOPvHHoQ');
-              script.setAttribute('data-category', 'Announcements');
-              script.setAttribute('data-category-id', 'DIC_kwDOPvHHoc4CvZUj');
-              script.setAttribute('data-mapping', 'pathname');
-              script.setAttribute('data-strict', '0');
-              script.setAttribute('data-reactions-enabled', '1');
-              script.setAttribute('data-emit-metadata', '0');
-              script.setAttribute('data-input-position', 'bottom');
-              script.setAttribute('data-theme', 'preferred_color_scheme');
-              script.setAttribute('data-lang', 'zh-CN');
-              script.setAttribute('crossorigin', 'anonymous');
-              script.async = true;
-
-              const container = document.createElement('div');
-              container.style.marginTop = '2rem';
-              container.appendChild(script);
-
-              const content = document.querySelector('.rspress-doc-content');
-              if (content) {
-                content.appendChild(container);
-              }
-            }
-
-            // 页面加载完成后加载评论
-            if (document.readyState === 'loading') {
-              document.addEventListener('DOMContentLoaded', loadGiscus);
+          </script><script src="/giscus.js"></script><script>
+            // 初始化 Giscus 评论系统
+            if (window.giscusManager) {
+              window.giscusManager.init();
             } else {
-              loadGiscus();
+              // 如果脚本还没加载完成，等待一下
+              document.addEventListener('DOMContentLoaded', () => {
+                if (window.giscusManager) {
+                  window.giscusManager.init();
+                }
+              });
             }
-
-            // 路由变化时重新加载评论
-            window.addEventListener('popstate', () => {
-              setTimeout(loadGiscus, 100);
-            });
           </script></head>
 
   <body >

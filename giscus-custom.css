@@ -1,0 +1,148 @@
+/* Giscus 评论系统自定义样式 */
+
+/* 评论容器样式 */
+.giscus-container {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  border-top: 1px solid var(--rp-c-divider, #e5e7eb);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 深色模式下的分割线 */
+[data-theme="dark"] .giscus-container {
+  border-top-color: var(--rp-c-divider-dark, #374151);
+}
+
+/* 评论标题样式 */
+.giscus-container h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--rp-c-text-1, #1f2937);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* 深色模式下的标题颜色 */
+[data-theme="dark"] .giscus-container h2 {
+  color: var(--rp-c-text-1-dark, #f9fafb);
+}
+
+/* Giscus iframe 容器样式 */
+.giscus {
+  width: 100%;
+}
+
+/* Giscus iframe 样式 */
+.giscus iframe {
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  min-height: 200px;
+}
+
+/* 加载状态样式 */
+.giscus-loading {
+  text-align: center;
+  padding: 2rem;
+  color: var(--rp-c-text-2, #6b7280);
+  font-style: italic;
+  background: var(--rp-c-bg-soft, #f8fafc);
+  border-radius: 8px;
+  border: 1px dashed var(--rp-c-divider, #e5e7eb);
+}
+
+/* 深色模式下的加载状态 */
+[data-theme="dark"] .giscus-loading {
+  color: var(--rp-c-text-2-dark, #9ca3af);
+  background: var(--rp-c-bg-soft-dark, #1f2937);
+  border-color: var(--rp-c-divider-dark, #374151);
+}
+
+/* 错误状态样式 */
+.giscus-loading.error {
+  color: var(--rp-c-danger, #dc2626);
+  border-color: var(--rp-c-danger, #dc2626);
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+  .giscus-container {
+    max-width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .giscus-container {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+    max-width: calc(100% - 2rem);
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .giscus-container h2 {
+    font-size: 1.25rem;
+  }
+
+  .giscus-loading {
+    padding: 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* 确保评论区域在小屏幕上的可读性 */
+@media (max-width: 480px) {
+  .giscus-container {
+    max-width: calc(100% - 2rem);
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+/* 优化评论区域的视觉层次 */
+.giscus-container::before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--rp-c-brand, #3b82f6), var(--rp-c-brand-light, #60a5fa));
+  border-radius: 2px;
+  margin-bottom: 1rem;
+}
+
+/* 深色模式下的装饰线 */
+[data-theme="dark"] .giscus-container::before {
+  background: linear-gradient(90deg, var(--rp-c-brand-dark, #60a5fa), var(--rp-c-brand-light-dark, #93c5fd));
+}
+
+/* 平滑过渡效果 */
+.giscus-container,
+.giscus-loading,
+.giscus iframe {
+  transition: all 0.3s ease;
+}
+
+/* 聚焦状态优化 */
+.giscus iframe:focus {
+  outline: 2px solid var(--rp-c-brand, #3b82f6);
+  outline-offset: 2px;
+}
+
+/* 确保评论区域不会影响页面布局 */
+.giscus-container {
+  contain: layout style;
+}

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content="Rspress v1.45.5">
     <title data-rh="true">L4D2 Wiki - L4D2 Wiki</title><meta data-rh="true" name="description" content="Left 4 Dead 2 综合信息资源网站"/>
-  <script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script><script defer src="/static/js/styles.998fbf28.js"></script><script defer src="/static/js/lib-react.6870e38a.js"></script><script defer src="/static/js/lib-router.98f44042.js"></script><script defer src="/static/js/15.babaee79.js"></script><script defer src="/static/js/index.13d51a07.js"></script><link href="/static/css/styles.b6f8176c.css" rel="stylesheet"><meta name="keywords" content="Left 4 Dead 2, L4D2, 游戏攻略, 地图攻略, MOD, 服务器"><script>
+  <script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script><script defer src="/static/js/styles.998fbf28.js"></script><script defer src="/static/js/lib-react.6870e38a.js"></script><script defer src="/static/js/lib-router.98f44042.js"></script><script defer src="/static/js/15.b23a2d92.js"></script><script defer src="/static/js/index.7edf9ab8.js"></script><link href="/static/css/styles.b6f8176c.css" rel="stylesheet"><meta name="keywords" content="Left 4 Dead 2, L4D2, 游戏攻略, 地图攻略, MOD, 服务器"><link rel="stylesheet" href="/giscus-custom.css"><script>
             // 抑制 React Router future flag 警告
             const originalWarn = console.warn;
             console.warn = function(...args) {
@@ -15,48 +15,18 @@
               }
               originalWarn.apply(console, args);
             };
-          </script><script>
-            // 自动加载 Giscus 评论
-            function loadGiscus() {
-              if (document.querySelector('.giscus')) return;
-
-              const script = document.createElement('script');
-              script.src = 'https://giscus.app/client.js';
-              script.setAttribute('data-repo', 'b9348/l4d2');
-              script.setAttribute('data-repo-id', 'R_kgDOPvHHoQ');
-              script.setAttribute('data-category', 'Announcements');
-              script.setAttribute('data-category-id', 'DIC_kwDOPvHHoc4CvZUj');
-              script.setAttribute('data-mapping', 'pathname');
-              script.setAttribute('data-strict', '0');
-              script.setAttribute('data-reactions-enabled', '1');
-              script.setAttribute('data-emit-metadata', '0');
-              script.setAttribute('data-input-position', 'bottom');
-              script.setAttribute('data-theme', 'preferred_color_scheme');
-              script.setAttribute('data-lang', 'zh-CN');
-              script.setAttribute('crossorigin', 'anonymous');
-              script.async = true;
-
-              const container = document.createElement('div');
-              container.style.marginTop = '2rem';
-              container.appendChild(script);
-
-              const content = document.querySelector('.rspress-doc-content');
-              if (content) {
-                content.appendChild(container);
-              }
-            }
-
-            // 页面加载完成后加载评论
-            if (document.readyState === 'loading') {
-              document.addEventListener('DOMContentLoaded', loadGiscus);
+          </script><script src="/giscus.js"></script><script>
+            // 初始化 Giscus 评论系统
+            if (window.giscusManager) {
+              window.giscusManager.init();
             } else {
-              loadGiscus();
+              // 如果脚本还没加载完成，等待一下
+              document.addEventListener('DOMContentLoaded', () => {
+                if (window.giscusManager) {
+                  window.giscusManager.init();
+                }
+              });
             }
-
-            // 路由变化时重新加载评论
-            window.addEventListener('popstate', () => {
-              setTimeout(loadGiscus, 100);
-            });
           </script></head>
 
   <body >
@@ -75,7 +45,7 @@
 <ul class="list-disc pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2"><a href="/index.html" class="link_a7cea  link_a9ef4 inline-link_f855c">简体中文</a></li>
 <li class="[&amp;:not(:first-child)]:mt-2"><a href="/en.html" class="link_a7cea  link_a9ef4 inline-link_f855c">English</a></li>
-</ul><!--/$--></div><div class="rspress-doc-footer"><footer class="mt-8"><div class="xs:flex pb-5 px-2 justify-end items-center"><div class="flex text-sm text-text-2 leading-6 sm:leading-8 font-medium"><p>Last Updated<!-- -->: <span>2025/9/13 09:47:50</span></p></div></div><div class="flex flex-col"><a href="https://github.com/b9348/l4d2/tree/main/docs/index.md" target="_blank" class="editLink_e1cfa">在 GitHub 上编辑此页</a></div><div class="flex flex-col sm:flex-row sm:justify-around gap-4 pt-6"><div class="prev_c92d1 flex flex-col"></div><div class="next_c11be flex flex-col"></div></div></footer></div></div><div class="aside-container_bc5fa"><div class="flex flex-col"><div id="aside-container" class="relative text-sm font-medium"><div class="leading-7 block text-sm font-semibold pl-3">ON THIS PAGE</div><nav class="mt-1"><ul class="relative"><li><a href="#快速导航" title="快速导航" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">快速导航</span></a></li><li><a href="#语言选择" title="语言选择" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">语言选择</span></a></li></ul></nav></div></div></div></div></div></div></section></div>
+</ul><!--/$--></div><div class="rspress-doc-footer"><footer class="mt-8"><div class="xs:flex pb-5 px-2 justify-end items-center"><div class="flex text-sm text-text-2 leading-6 sm:leading-8 font-medium"><p>Last Updated<!-- -->: <span>2025/9/13 11:47:30</span></p></div></div><div class="flex flex-col"><a href="https://github.com/b9348/l4d2/tree/main/docs/index.md" target="_blank" class="editLink_e1cfa">在 GitHub 上编辑此页</a></div><div class="flex flex-col sm:flex-row sm:justify-around gap-4 pt-6"><div class="prev_c92d1 flex flex-col"></div><div class="next_c11be flex flex-col"></div></div></footer></div></div><div class="aside-container_bc5fa"><div class="flex flex-col"><div id="aside-container" class="relative text-sm font-medium"><div class="leading-7 block text-sm font-semibold pl-3">ON THIS PAGE</div><nav class="mt-1"><ul class="relative"><li><a href="#快速导航" title="快速导航" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">快速导航</span></a></li><li><a href="#语言选择" title="语言选择" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">语言选择</span></a></li></ul></nav></div></div></div></div></div></div></section></div>
     <div id="search-container"></div>
   </body>
 </html>
