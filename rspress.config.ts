@@ -102,15 +102,21 @@ export default defineConfig({
         {
           tag: 'script',
           children: `
-            // 初始化 Giscus 评论系统
-            if (window.giscusManager) {
-              window.giscusManager.init();
+            // 初始化 Giscus 评论系统 - 延迟执行避免水合冲突
+            function initGiscus() {
+              if (window.giscusManager) {
+                window.giscusManager.init();
+              } else {
+                setTimeout(initGiscus, 100);
+              }
+            }
+
+            // 等待页面完全加载后再初始化
+            if (document.readyState === 'complete') {
+              setTimeout(initGiscus, 1000);
             } else {
-              // 如果脚本还没加载完成，等待一下
-              document.addEventListener('DOMContentLoaded', () => {
-                if (window.giscusManager) {
-                  window.giscusManager.init();
-                }
+              window.addEventListener('load', () => {
+                setTimeout(initGiscus, 1000);
               });
             }
           `,
