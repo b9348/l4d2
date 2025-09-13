@@ -1,7 +1,7 @@
 {
-  "name": "l4d2-wiki",
+  "name": "l4d-resources",
   "version": "1.0.0",
-  "description": "Left 4 Dead 2 综合信息资源网站",
+  "description": "L4D资源 - Left 4 Dead 2 综合资源网站",
   "main": "index.js",
   "scripts": {
     "dev": "rspress dev",
@@ -9,10 +9,18 @@
     "preview": "rspress preview"
   },
   "keywords": [
-    "l4d2",
+    "l4d资源",
+    "l4d2资源",
     "left4dead2",
-    "游戏攻略",
-    "wiki"
+    "求生之路2",
+    "l4d2模组",
+    "l4d2地图",
+    "l4d2服务器",
+    "模组推荐",
+    "地图下载",
+    "找服玩",
+    "开服教程",
+    "游戏资源"
   ],
   "author": "",
   "license": "MIT",

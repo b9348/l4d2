@@ -1,17 +1,22 @@
 [
   {
-    "text": "Guide",
-    "link": "/en/guide/",
-    "activeMatch": "^/en/guide/"
+    "text": "Mods",
+    "link": "/en/mods/",
+    "activeMatch": "^/en/mods/"
   },
   {
-    "text": "Maps", 
+    "text": "Maps",
     "link": "/en/maps/",
     "activeMatch": "^/en/maps/"
   },
   {
-    "text": "Weapons",
-    "link": "/en/weapons/",
-    "activeMatch": "^/en/weapons/"
+    "text": "Find Servers",
+    "link": "/en/servers/",
+    "activeMatch": "^/en/servers/"
+  },
+  {
+    "text": "Server Admin",
+    "link": "/en/admin/",
+    "activeMatch": "^/en/admin/"
   }
 ]

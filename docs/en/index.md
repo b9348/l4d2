@@ -1,6 +1,6 @@
-# L4D2 Wiki
+# L4D Resources
 
-Welcome to the comprehensive Left 4 Dead 2 information resource website! This is the most complete L4D2 resource library, providing players with an ad-free, clean gaming information experience.
+Welcome to L4D Resources! This is the most professional Left 4 Dead 2 resource website, providing players with comprehensive mod recommendations, map guides, server lists, and gaming resources.
 
 ## 🎮 Website Features
 
@@ -11,35 +11,29 @@ Welcome to the comprehensive Left 4 Dead 2 information resource website! This is
 
 ## 📚 Main Content
 
-### [🎯 Game Guide](/en/guide/)
-- Beginner tutorials
-- Basic controls guide
-- Game modes explained
-- Character skills introduction
+### [🔧 Mods](/en/mods/)
+- Model Mods: Character, weapon, and environment enhancements
+- Script Mods: Gameplay enhancements and utility tools
+- Audio & Visual: Sound packs and visual effects
+- Essential Mods: Top recommendations and beginner-friendly
 
-### [🗺️ Map Strategies](/en/maps/)
-- Complete official map guides
-- DLC map details
-- Hidden elements discovery
-- Optimal route recommendations
+### [🗺️ Maps](/en/maps/)
+- Official Maps: Complete official campaigns and DLC
+- Third-Party Maps: Community featured and custom campaigns
+- Popular Recommendations: Beginner-friendly and challenging maps
+- Map Guides: Completion tips and hidden elements
 
-### [⚔️ Weapons & Equipment](/en/weapons/)
-- Weapon attribute comparison
-- Equipment selection advice
-- Damage data analysis
-- Usage tips sharing
+### [🎮 Find Servers](/en/servers/)
+- Vanilla Servers: Official and mod-free experience
+- Versus Servers: Competitive and casual versus modes
+- RPG Servers: Character growth and equipment systems
+- Server Guide: Connection methods and selection advice
 
-### [🔧 MOD Recommendations](/en/mods/)
-- Curated MOD collections
-- Installation tutorials
-- Compatibility testing
-- Workshop navigation
-
-### [🖥️ Servers](/en/servers/)
-- Quality server recommendations
-- Server setup guides
-- Configuration optimization
-- Community server lists
+### [🖥️ Server Admin](/en/admin/)
+- Server Setup: Build servers from scratch tutorials
+- Server Configuration: Basic and advanced configuration guides
+- Advanced Management: Admin commands and automation scripts
+- Security Protection: Anti-cheat and user management
 
 ## 🌟 Quick Start
 
